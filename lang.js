@@ -4,6 +4,22 @@ const translations = {
     title: "EvthBound • Main Page",
 	
 	mainPage: "Main page",
+	aboutMe: "About me",
+	myProjects: "My projects",
+	myPhotography: "My photography",
+	myVideos: "My videos",
+	
+	links: "Links",
+	mainPage2: "Main page",
+	aboutMe2: "About me",
+	myProjects2: "My projects",
+	myPhotography2: "My photography",
+	myVideos2: "My videos",
+	
+	socials: "Socials",
+	insta: "My Instagram",
+	spotify: "My Spotify",
+	itch: "My Itch.io Page",
 	
 	welcome: "welcome to EvthBound.com !",
 	switchLang: "Please Nintendo don't sue me, I just love Earthbound. Evth.com and EvergreenTh.com were already taken I couldn't do anything ya know. Oh and you can switch language in the menu by the way. just click on the EVTH logo !",
@@ -20,6 +36,22 @@ const translations = {
 	title: "EvthBound • Page Principale",
 	
 	mainPage: "Page principale",
+	aboutMe: "À propos de moi",
+	myProjects: "Mes projets",
+	myPhotography: "Mes photos",
+	myVideos: "Mes videos",
+	
+	links: "Liens",
+	mainPage2: "Page principale",
+	aboutMe2: "À propos de moi",
+	myProjects2: "Mes projets",
+	myPhotography2: "Mes photos",
+	myVideos2: "Mes videos",
+	
+	socials: "Mes réseaux sociaux",
+	insta: "Mon Instagram",
+	spotify: "Mon Spotify",
+	itch: "Ma page Itch.io",
 	
     welcome: "Bienvenue sur EvthBound.com ! ",
 	switchLang: "S’il vous plaît Nintendo, ne me poursuivez pas en justice, j’adore juste Earthbound. Evth.com et EvergreenTh.com étaient déjà pris, je pouvais rien faire vous savez. Ah, et vous pouvez changer la langue dans le menu d’ailleurs — cliquez juste sur le logo EVTH !",

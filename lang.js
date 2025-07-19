@@ -38,7 +38,7 @@ const translations = {
 	pic1: "A friend",
 	pic2: "A car",
 	pic3: "Another friend",
-	pic4: "The same car (+film crew)",
+	pic4: "The same car",
 	pic5: "Yet another friend",
 	pic6: "Click to see more",
 	
@@ -88,7 +88,7 @@ const translations = {
 	pic1: "Un ami",
 	pic2: "Une voiture",
 	pic3: "Un autre ami",
-	pic4: "La même voiture (+tournage)",
+	pic4: "La même voiture",
 	pic5: "Encore un autre ami",
 	pic6: "Clique pour en voir plus",
 	

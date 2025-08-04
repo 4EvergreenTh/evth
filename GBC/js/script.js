@@ -7,7 +7,7 @@
 "use strict";
 
 // User configurable.
-const ROM_FILENAME = "rom/game.gb";
+const ROM_FILENAME = "rom/game.gbc";
 const ENABLE_REWIND = true;
 const ENABLE_PAUSE = false;
 const ENABLE_SWITCH_PALETTES = true;
@@ -362,56 +362,54 @@ class Emulator {
   }
 
   updateOnscreenGamepad() {
-    $("#controller").style.display = this.touchEnabled ? "block" : "block";
+    $("#controller").style.display = this.touchEnabled ? "block" : "none";
   }
 
   bindTouch() {
-  this.touchFuncs = {
-    controller_b: this.setJoypB.bind(this),
-    controller_a: this.setJoypA.bind(this),
-    controller_start: this.setJoypStart.bind(this),
-    controller_select: this.setJoypSelect.bind(this),
-    controller_up: this.setJoypUp.bind(this),
-  };
+    this.touchFuncs = {
+      controller_b: this.setJoypB.bind(this),
+      controller_a: this.setJoypA.bind(this),
+      controller_start: this.setJoypStart.bind(this),
+      controller_select: this.setJoypSelect.bind(this),
+    };
 
-  this.boundButtonTouchStart = this.buttonTouchStart.bind(this);
-  this.boundButtonTouchEnd = this.buttonTouchEnd.bind(this);
+    this.boundButtonTouchStart = this.buttonTouchStart.bind(this);
+    this.boundButtonTouchEnd = this.buttonTouchEnd.bind(this);
+    selectEl.addEventListener("touchstart", this.boundButtonTouchStart);
+    selectEl.addEventListener("touchend", this.boundButtonTouchEnd);
+    startEl.addEventListener("touchstart", this.boundButtonTouchStart);
+    startEl.addEventListener("touchend", this.boundButtonTouchEnd);
+    bEl.addEventListener("touchstart", this.boundButtonTouchStart);
+    bEl.addEventListener("touchend", this.boundButtonTouchEnd);
+    aEl.addEventListener("touchstart", this.boundButtonTouchStart);
+    aEl.addEventListener("touchend", this.boundButtonTouchEnd);
 
-  const buttons = [selectEl, startEl, bEl, aEl, upEl];
-  buttons.forEach(btn => {
-    btn.addEventListener("touchstart", this.boundButtonTouchStart);
-    btn.addEventListener("touchend", this.boundButtonTouchEnd);
-    btn.addEventListener("mousedown", this.boundButtonTouchStart);
-    btn.addEventListener("mouseup", this.boundButtonTouchEnd);
-  });
+    this.boundDpadTouchStartMove = this.dpadTouchStartMove.bind(this);
+    this.boundDpadTouchEnd = this.dpadTouchEnd.bind(this);
+    dpadEl.addEventListener("touchstart", this.boundDpadTouchStartMove);
+    dpadEl.addEventListener("touchmove", this.boundDpadTouchStartMove);
+    dpadEl.addEventListener("touchend", this.boundDpadTouchEnd);
 
-  this.boundDpadTouchStartMove = this.dpadTouchStartMove.bind(this);
-  this.boundDpadTouchEnd = this.dpadTouchEnd.bind(this);
-  dpadEl.addEventListener("touchstart", this.boundDpadTouchStartMove);
-  dpadEl.addEventListener("touchmove", this.boundDpadTouchStartMove);
-  dpadEl.addEventListener("touchend", this.boundDpadTouchEnd);
-
-  this.boundTouchRestore = this.touchRestore.bind(this);
-  window.addEventListener("touchstart", this.boundTouchRestore);
-}
-
+    this.boundTouchRestore = this.touchRestore.bind(this);
+    window.addEventListener("touchstart", this.boundTouchRestore);
+  }
 
   unbindTouch() {
-  const buttons = [selectEl, startEl, bEl, aEl];
-  buttons.forEach(btn => {
-    btn.removeEventListener("touchstart", this.boundButtonTouchStart);
-    btn.removeEventListener("touchend", this.boundButtonTouchEnd);
-    btn.removeEventListener("mousedown", this.boundButtonTouchStart);
-    btn.removeEventListener("mouseup", this.boundButtonTouchEnd);
-  });
+    selectEl.removeEventListener("touchstart", this.boundButtonTouchStart);
+    selectEl.removeEventListener("touchend", this.boundButtonTouchEnd);
+    startEl.removeEventListener("touchstart", this.boundButtonTouchStart);
+    startEl.removeEventListener("touchend", this.boundButtonTouchEnd);
+    bEl.removeEventListener("touchstart", this.boundButtonTouchStart);
+    bEl.removeEventListener("touchend", this.boundButtonTouchEnd);
+    aEl.removeEventListener("touchstart", this.boundButtonTouchStart);
+    aEl.removeEventListener("touchend", this.boundButtonTouchEnd);
 
-  dpadEl.removeEventListener("touchstart", this.boundDpadTouchStartMove);
-  dpadEl.removeEventListener("touchmove", this.boundDpadTouchStartMove);
-  dpadEl.removeEventListener("touchend", this.boundDpadTouchEnd);
+    dpadEl.removeEventListener("touchstart", this.boundDpadTouchStartMove);
+    dpadEl.removeEventListener("touchmove", this.boundDpadTouchStartMove);
+    dpadEl.removeEventListener("touchend", this.boundDpadTouchEnd);
 
-  window.removeEventListener("touchstart", this.boundTouchRestore);
-}
-
+    window.removeEventListener("touchstart", this.boundTouchRestore);
+  }
 
   buttonTouchStart(event) {
     if (event.currentTarget.id in this.touchFuncs) {

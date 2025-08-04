@@ -1,7 +1,7 @@
 /* Reset and basic setup */
 body {
   margin: 0;
-  background-color: rgb(51, 37, 50);
+  background-color: #0d0c0f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,8 +32,10 @@ body {
   width: 52.4%;
   height: auto;
   z-index: -999;
-  background-color: blue;
+  /* background-color: blue; */
   border-radius: 0px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 /* Shared button styles */
@@ -47,6 +49,9 @@ body {
   font-family: Arial, sans-serif;
   font-weight: bold;
   color: #440f1f;
+
+  /* buttons */
+  opacity: 0;
 }
 
 /* Round buttons (A, B) */
@@ -97,11 +102,13 @@ body {
 /* D-Pad Container */
 #controller_dpad {
   position: absolute;
-  top: 64%;
-  left: 12%;
+  top: 57.5%;
+  left: 9.7%;
   width: 28%;
   aspect-ratio: 1;
-  opacity: 0.6;
+  
+  /* DPAD buttons */
+  opacity: 0;
 }
 
 /* Shared style for D-Pad directions */
@@ -115,26 +122,26 @@ body {
 
 /* Positioning individual directions */
 #controller_up {
-  bottom: 105%;
-  left: 24.5%;
+  top: 0%;
+  left: 32%;
   border-radius: 6px 6px 0 0;
 }
 
 #controller_down {
-  bottom: 38%;
-  left: 24.5%;
+  bottom: 0%;
+  left: 32%;
   border-radius: 0 0 6px 6px;
 }
 
 #controller_left {
-  bottom: 73%;
-  right: 73%;
+  bottom: 32%;
+  left: 0%;
   border-radius: 6px 0 0 6px;
 }
 
 #controller_right {
-  bottom: 73%;
-   right: 8%;
+  bottom: 32%;
+  right: 0%;
   border-radius: 0 6px 6px 0;
 }
 

@@ -7,7 +7,7 @@
 "use strict";
 
 // User configurable.
-const ROM_FILENAME = "rom/game.gbc";
+const ROM_FILENAME = "rom/game.gb";
 const ENABLE_REWIND = true;
 const ENABLE_PAUSE = false;
 const ENABLE_SWITCH_PALETTES = true;
@@ -362,21 +362,22 @@ class Emulator {
   }
 
   updateOnscreenGamepad() {
-    $("#controller").style.display = this.touchEnabled ? "block" : "none";
+    $("#controller").style.display = this.touchEnabled ? "block" : "block";
   }
 
-    bindTouch() {
+  bindTouch() {
   this.touchFuncs = {
     controller_b: this.setJoypB.bind(this),
     controller_a: this.setJoypA.bind(this),
     controller_start: this.setJoypStart.bind(this),
     controller_select: this.setJoypSelect.bind(this),
+    controller_up: this.setJoypUp.bind(this),
   };
 
   this.boundButtonTouchStart = this.buttonTouchStart.bind(this);
   this.boundButtonTouchEnd = this.buttonTouchEnd.bind(this);
 
-  const buttons = [selectEl, startEl, bEl, aEl];
+  const buttons = [selectEl, startEl, bEl, aEl, upEl];
   buttons.forEach(btn => {
     btn.addEventListener("touchstart", this.boundButtonTouchStart);
     btn.addEventListener("touchend", this.boundButtonTouchEnd);
@@ -394,6 +395,7 @@ class Emulator {
   window.addEventListener("touchstart", this.boundTouchRestore);
 }
 
+
   unbindTouch() {
   const buttons = [selectEl, startEl, bEl, aEl];
   buttons.forEach(btn => {
@@ -409,6 +411,7 @@ class Emulator {
 
   window.removeEventListener("touchstart", this.boundTouchRestore);
 }
+
 
   buttonTouchStart(event) {
     if (event.currentTarget.id in this.touchFuncs) {

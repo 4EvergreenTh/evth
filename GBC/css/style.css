@@ -1,188 +1,140 @@
-#game {
+/* Reset and basic setup */
+body {
+  margin: 0;
+  background-color: rgb(51, 37, 50);
   display: flex;
   justify-content: center;
-}
-
-#game img {
-  position: absolute;
+  align-items: center;
   height: 100vh;
-}
-
-#game canvas {
-  position: relative;
-  left: 26px;
-  top: 12vh;
-  height: 29vh;
-  width: auto;
-  /* z-index: 999; */
-
-  background-color: blue;
-}
-
-body {
-  background-color: rgb(51, 37, 50);
   overflow: hidden;
-  margin: 0;
   touch-action: none;
   user-select: none;
 }
 
-
-
-
-
-
-#controller_dpad {
+/* Wrapper holds image, buttons, and canvas */
+#gbc-wrapper {
   position: relative;
-  top: 0;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  opacity: 0.7;
+  width: 90vw;
+  max-width: 500px;
 }
 
-#controller_dpad:before {
-  content: "";
+/* Game Boy PNG */
+#gbc {
+  width: 100%;
   display: block;
-  width: 48px;
-  height: 48px;
-  background: #5c5c5c;
-  background: radial-gradient(
-    ellipse at center,
-    #5c5c5c 0%,
-    #555 59%,
-    #5c5c5c 60%
-  );
-  position: absolute;
-  left: 68px;
-  top: 68px;
 }
 
-#controller_left {
+/* Canvas in screen area */
+#mainCanvas {
   position: absolute;
-  left: 20px;
-  top: 68px;
-  width: 48px;
-  height: 48px;
-  background: #666;
-  background: radial-gradient(ellipse at center, #666 0%, #5c5c5c 80%);
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  top: 12%;
+  left: 23%;
+  width: 52.4%;
+  height: auto;
+  z-index: -999;
+  background-color: blue;
+  border-radius: 0px;
 }
 
-#controller_right {
+/* Shared button styles */
+.roundBtn, .capsuleBtn {
   position: absolute;
-  left: 116px;
-  top: 68px;
-  width: 48px;
-  height: 48px;
-  background: #666;
-  background: radial-gradient(ellipse at center, #666 0%, #5c5c5c 80%);
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  z-index: 10;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #440f1f;
 }
 
-#controller_up {
-  position: absolute;
-  left: 68px;
-  top: 20px;
-  width: 48px;
-  height: 48px;
-  background: #666;
-  background: radial-gradient(ellipse at center, #666 0%, #5c5c5c 80%);
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+/* Round buttons (A, B) */
+.roundBtn {
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, #ab1465 0%, #8b1e57 100%);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 1;
+  font-size: 1.5em;
 }
 
-#controller_down {
-  position: absolute;
-  left: 68px;
-  top: 116px;
-  width: 48px;
-  height: 48px;
-  background: #666;
-  background: radial-gradient(ellipse at center, #666 0%, #5c5c5c 80%);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+/* Capsule buttons (Start, Select) */
+.capsuleBtn {
+  border-radius: 20px;
+  background: radial-gradient(ellipse at center, #666 0%, #555 100%);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+  font-size: 0.8em;
+  text-transform: uppercase;
 }
 
-
-
-
-
-
-
-
+/* Button positioning (tweak these as needed!) */
 #controller_a {
-  position: relative;
-  left: 20px;
-  top: 40.8vh;
-  height: 9vh;
-  width: 9vh;
+  top: 60.5%;
+  left: 75%;
+  width: 13%;
 }
 
 #controller_b {
-  position: relative;
-  right: 43px;
-  top: 52.8vh;
-  height: 9vh;
-  width: 9vh;
-}
-
-.roundBtn {
-  display: flex;
-  font-family: Arial, Helvetica, sans-serif;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 32px;
-  color: #440f1f;
-  line-height: 64px;
-  width: 55px;
-  height: 55px;
-  border-radius: 64px;
-  background: #870a4c;
-  background: radial-gradient(ellipse at center, #ab1465 0%, #8b1e57 100%);
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
-  opacity: 0.5;
-}
-
-.capsuleBtn {
-  font-weight: bold;
-  font-size: 10px;
-  color: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 40px;
-  text-transform: uppercase;
-  width: 64px;
-  height: 32px;
-  border-radius: 40px;
-  background: #222;
-  background: radial-gradient(ellipse at center, #666 0%, #555 100%);
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+  top: 63.5%;
+  left: 58.5%;
+  width: 13%;
 }
 
 #controller_start {
-  position: relative;
-  right: 69px;
-  top: 73.4vh;
-  height: 5vh;
-  width: 9vh;
+  top: 78.5%;
+  left: 51.5%;
+  width: 15%;
+  height: 5%;
 }
 
 #controller_select {
-  position: relative;
-  right: 134px;
-  top: 78.4vh;
-  height: 5vh;
-  width: 9vh;
+  top: 78.5%;
+  left: 34%;
+  width: 15%;
+  height: 5%;
 }
 
-.btnPressed {
-  opacity: 0.5;
+/* D-Pad Container */
+#controller_dpad {
+  position: absolute;
+  top: 64%;
+  left: 12%;
+  width: 28%;
+  aspect-ratio: 1;
+  opacity: 0.6;
 }
 
+/* Shared style for D-Pad directions */
+#controller_dpad > div {
+  position: absolute;
+  background: radial-gradient(ellipse at center, #666 0%, #5c5c5c 80%);
+  width: 35%;
+  height: 35%;
+  z-index: 10;
+}
 
+/* Positioning individual directions */
+#controller_up {
+  bottom: 105%;
+  left: 24.5%;
+  border-radius: 6px 6px 0 0;
+}
+
+#controller_down {
+  bottom: 38%;
+  left: 24.5%;
+  border-radius: 0 0 6px 6px;
+}
+
+#controller_left {
+  bottom: 73%;
+  right: 73%;
+  border-radius: 6px 0 0 6px;
+}
+
+#controller_right {
+  bottom: 73%;
+   right: 8%;
+  border-radius: 0 6px 6px 0;
+}
 

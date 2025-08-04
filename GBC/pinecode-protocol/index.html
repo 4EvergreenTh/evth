@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>The Pinecode Protocol | Evthbound</title>
+    <meta name="author" content="EvergreenTh" />
+    <link rel="icon" href="img/pinecode_logo.png">
+  </head>
+
+
+	<body>
+		<div class="fadeIn">
+      <div id="gbc-wrapper">
+        <img src="gbc.png" alt="Game Boy Overlay" style="pointer-events: none;" id="gbc" />
+
+        <!-- Canvas in screen -->
+        <canvas class="mainCanvas" width="256" height="224">No Canvas Support</canvas>
+        
+        <!-- D-Pad Container -->
+        <div id="controller">
+          <div id="controller_dpad">
+            <div id="controller_left"></div>
+            <div id="controller_right"></div>
+            <div id="controller_up"></div>
+            <div id="controller_down"></div>
+          </div>
+
+          <div id="controller_select" class="capsuleBtn">Select</div>
+          <div id="controller_start" class="capsuleBtn">Start</div>
+          <div id="controller_b" class="roundBtn">B</div>
+          <div id="controller_a" class="roundBtn">A</div>
+      </div>
+		</div>
+  </div>
+    
+    
+    
+    <script>
+      const customControls = {"up":["ArrowUp","z"],"down":["ArrowDown","s"],"left":["ArrowLeft","q"],"right":["ArrowRight","d"],"a":["a"],"b":["e"],"start":["Enter"],"select":["Shift"]}
+    </script>
+    <script src="binjgb.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/debugger.js"></script>
+</body>

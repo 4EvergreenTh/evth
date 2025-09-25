@@ -11,13 +11,19 @@ html, body {
 	font-weight: normal;
 	font-style: normal;
 
+
+	/* font-family: 'GameBoy';
+	src: url('font/GameBoy.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal; */
+
 }
 
 body {
 	margin: 0px;
 	background-color: #351d1b;
 	overflow-x: hidden;
-	font-family: 'Earthbound', sans-serif;
+	font-family: 'GameBoy','Earthbound', sans-serif;
 	font-size: clamp(1rem, 2vw, 1.25rem);
 	color: #b86f50;
 }
@@ -330,11 +336,6 @@ p {
 	text-align: justify;
 }
 
-button p {
-	padding-right: 0px;
-	margin: 0px;
-}
-
 .rightside {
 	position: relative;
 	bottom: 40px;
@@ -342,26 +343,49 @@ button p {
 	/* padding-right: 1vw; */
 }
 
+
+
+
+
+
+
 button {
+	color: #c8771c;
 	background-color: #351d1b;
+	border: 2px solid #c8771c;
 	font-family: 'Earthbound', sans-serif;
-	border: 2px solid #b86f50;
-  	padding: 20px 20px;
-	color: #e4a672;
+  	padding: 10px;
   	text-align: center;
   	text-decoration: none;
   	display: inline-block;
   	margin: 4px 2px;
   	cursor: pointer;
-  	border-radius: 50%;
+  	border-radius: 30px;
 	transition: 0.2s;
 }
 
-button:hover {
-	color: #e9ca83;
-  	background-color: #543717;
-  	border: 2px solid #c8771c;
+button p {
+	color: #c8771c;
+	padding-right: 0px;
+	margin: 0px;
 }
+
+button:hover {
+	color: #241211;
+  	background-color: #d3c2ab;
+  	border: 2px solid #d3c2ab;
+}
+
+button:hover p {
+	color: #351d1b;
+}
+	
+
+
+
+
+
+
 
 
 b {
@@ -369,10 +393,6 @@ b {
 }
 
 
-/* .logo { */
-	/* height: 40px; */
-	/* width: auto; */
-	/* } */
 
 .insta {
 	height: 35px;
@@ -381,10 +401,6 @@ b {
 
 .title {
 	font-size: 4vw;
-}
-
-.margin {
-	
 }
 
 
@@ -412,6 +428,10 @@ b {
 
 #games button {
 	background-color: #291f1e;
+}
+
+#games button:hover {
+	background-color: #d3c2ab;
 }
 
 
@@ -558,6 +578,32 @@ b {
 
 #img_see_more:hover {
 	transform: scale(1.02);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.static {
+	background-image: url('img/PAGE_index/gameplay.gif');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+  
+	/* Add a height so the section has space to show the background */
+	/* width: 100vw; */
+	/* position: relative; */
+	/* overflow: hidden; /* ensures nothing inside spills out */ 
+	height: 100vh;
 }
 
 

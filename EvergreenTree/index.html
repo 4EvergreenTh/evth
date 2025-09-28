@@ -8,6 +8,24 @@
 	</head>
 	<body>
 
+		<script>
+window.addEventListener('load', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  // Only fade if ?fade=1
+  if (urlParams.get('fade') === '1') {
+    document.body.style.opacity = '0'; // start invisible
+
+    setTimeout(() => {
+      document.body.style.opacity = '1'; // fade in
+    }, 500); // delay before fade
+  } else {
+    // Ensure visible if no ?fade=1
+    document.body.style.opacity = '1';
+  }
+});
+</script>
+		
 		<audio id="hover-sound" src="hover.mp3" preload="auto"></audio>
 
 		<div>
@@ -171,3 +189,4 @@ $(".channel").mouseenter(function() {
 
 	</body>
 </html>
+

@@ -124,10 +124,7 @@ document.querySelectorAll('.channel').forEach(channel => {
       clone.style.opacity = 0;
     }, 200); // 200ms delay before fading
 
-	setTimeout(() => {
- 	 	window.location.href = link;
- 	 	clone.remove(); // remove the clone so it doesn't stay
-	}, 200); // match the total fade duration
+	
 
     // Redirect slightly after fade completes
     setTimeout(() => {

@@ -8,31 +8,6 @@
 	</head>
 	<body>
 
-		<style>
-			body {
-				opacity: 1;                 /* default: visible */
-				transition: opacity 1s ease; /* fade duration */
-			}
-		</style>
-
-		<script>
-			window.addEventListener('load', () => {
-			const urlParams = new URLSearchParams(window.location.search);
-
-			// Only fade if ?fade=1
-			if (urlParams.get('fade') === '1') {
-				document.body.style.opacity = '0'; // start invisible
-
-				setTimeout(() => {
-				document.body.style.opacity = '1'; // fade in
-				}, 500); // delay before fade
-			} else {
-				// Ensure visible if no ?fade=1
-				document.body.style.opacity = '1';
-			}
-			});
-		</script>
-
 
 		<audio id="hover-sound" src="hover.mp3" preload="auto"></audio>
 
@@ -147,6 +122,11 @@ document.querySelectorAll('.channel').forEach(channel => {
     setTimeout(() => {
       clone.style.opacity = 0;
     }, 200); // 200ms delay before fading
+
+	setTimeout(() => {
+ 	 	window.location.href = link;
+ 	 	clone.remove(); // remove the clone so it doesn't stay
+	}, 200); // match the total fade duration
 
     // Redirect slightly after fade completes
     setTimeout(() => {

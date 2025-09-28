@@ -7,7 +7,9 @@ body {
     align-items: center;
     height: 100vh;
 
-  cursor: url('img/cursor.png') 15 0, auto;
+    cursor: url('img/cursor.png') 15 0, auto;
+    opacity: 1;                 /* default: visible */
+    transition: opacity 1s ease;
 
   }
       

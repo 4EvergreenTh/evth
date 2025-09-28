@@ -28,7 +28,7 @@ body {
 	color: #b86f50;
 
 	opacity: 1;                  /* default: visible */
-  	transition: opacity 1s ease; /* fade duration */
+  	transition: opacity 2s ease; /* fade duration */
 }
 
 body.fade-in {

@@ -13,13 +13,17 @@
 			// Check URL for ?fade=1
 			const urlParams = new URLSearchParams(window.location.search);
 			if (urlParams.get('fade') === '1') {
-			document.body.classList.add('fade-in');
-			window.addEventListener('load', () => {
-				// Trigger fade-in after load
-				document.body.style.opacity = '1';
-			});
+				document.body.style.opacity = '0'; // start invisible
+				document.body.style.transition = 'opacity 1s ease'; // fade duration
+
+				window.addEventListener('load', () => {
+					setTimeout(() => {
+					document.body.style.opacity = '1'; // trigger fade after delay
+					}, 500); // delay in milliseconds (500ms = 0.5s)
+				});
 			}
 		</script>
+
 
 
 	

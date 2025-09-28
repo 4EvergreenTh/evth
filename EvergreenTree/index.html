@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<title>Wii Menu</title>
+		<link rel="stylesheet" href="css.css">
+	</head>
+	<body>
+
+		<audio id="hover-sound" src="hover.mp3" preload="auto"></audio>
+
+		<div>
+			<div class="wii-menu">
+				<a href="https://evthbound.com?fade=1">
+					<div class="channel">
+						<img src="channels/evth.gif">
+					</div>
+				</a>
+				<a href="https://www.instagram.com/tom_maussion/">
+					<div class="channel">
+						<img src="channels/insta.gif">
+					</div>
+				</a>
+				<div class="emptychannel">
+					EVTH
+				</div>
+				<a href="https://evergreenth.itch.io/">
+					<div class="channel">
+						<img src="channels/itch.gif">
+					</div>
+				</a>
+				<a href="channels/fab.jpg">
+					<div class="channel">
+						<img src="channels/fab.jpg">
+					</div>
+				</a>
+				<div class="emptychannel">
+					EVTH
+				</div>
+				<a href="channels/cestlavie.jpg">
+					<div class="channel">
+						<img src="channels/cestlavie.jpg">
+					</div>
+				</a>
+				</audio>
+				<div class="emptychannel">
+					EVTH
+				</div>
+				<div class="emptychannel">
+					EVTH
+				</div>
+				<div class="emptychannel">
+					EVTH
+				</div>
+				<div class="emptychannel">
+					EVTH
+				</div>
+				<a href="https://open.spotify.com/user/maussiontom">
+					<div class="channel">
+						<img src="channels/spotify.gif">
+					</div>
+				</a>
+				
+				
+			<div class="footer">
+				<a href="#" class="wii-button">Wii Options</a>
+			</div>
+		</div>
+
+		<div id="overlay"></div>
+
+<script>
+document.querySelectorAll('.channel').forEach(channel => {
+  channel.addEventListener('click', e => {
+    e.preventDefault();
+    const link = channel.parentElement.href;
+
+    const img = channel.querySelector('img');
+    if (!img) return;
+
+    const rect = img.getBoundingClientRect();
+
+    // Create black background
+    const blackBg = document.createElement('div');
+    blackBg.style.position = 'fixed';
+    blackBg.style.left = rect.left + 'px';
+    blackBg.style.top = rect.top + 'px';
+    blackBg.style.width = rect.width + 'px';
+    blackBg.style.height = rect.height + 'px';
+    blackBg.style.backgroundColor = 'black';
+    blackBg.style.zIndex = 9998;
+    blackBg.style.transition = 'all 0.5s ease';
+    document.body.appendChild(blackBg);
+
+    // Clone the image
+    const clone = img.cloneNode(true);
+    clone.style.position = 'fixed';
+    clone.style.left = rect.left + 'px';
+    clone.style.top = rect.top + 'px';
+    clone.style.width = rect.width + 'px';
+    clone.style.height = rect.height + 'px';
+    clone.style.margin = 0;
+    clone.style.zIndex = 9999;
+    clone.style.transition = 'all 0.5s ease, opacity 0.5s ease';
+    document.body.appendChild(clone);
+
+    // Scale immediately
+    requestAnimationFrame(() => {
+      clone.style.left = '0';
+      clone.style.top = '0';
+      clone.style.width = '100%';
+      clone.style.height = '100%';
+      blackBg.style.left = '0';
+      blackBg.style.top = '0';
+      blackBg.style.width = '100%';
+      blackBg.style.height = '100%';
+    });
+
+    // Delay fade
+    setTimeout(() => {
+      clone.style.opacity = 0;
+    }, 200); // 200ms delay before fading
+
+    // Redirect slightly after fade completes
+    setTimeout(() => {
+      window.location.href = link;
+    }, 700); // 500ms fade + 200ms delay
+  });
+});
+
+
+</script>
+
+
+
+
+<audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
+
+<script>
+const audio = document.getElementById('clickSound');
+audio.volume = 0.3; // 50% volume
+
+document.querySelectorAll('.channel').forEach(channel => {
+  channel.addEventListener('click', () => {
+    audio.currentTime = 0; // restart sound if clicked rapidly
+    audio.play();
+  });
+});
+</script>
+
+
+
+
+
+<audio id="mySoundClip" src="hover.mp3" preload="auto"></audio>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+var audio = $("#mySoundClip")[0];
+$(".channel").mouseenter(function() {
+  audio.currentTime = 0;
+  audio.play();
+});
+</script>
+
+
+
+
+
+	</body>
+</html>

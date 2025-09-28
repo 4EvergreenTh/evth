@@ -26,6 +26,13 @@ body {
 	font-family: 'GameBoy','Earthbound', sans-serif;
 	font-size: clamp(1rem, 2vw, 1.25rem);
 	color: #b86f50;
+
+	opacity: 1;                  /* default: visible */
+  	transition: opacity 1s ease; /* fade duration */
+}
+
+body.fade-in {
+  	opacity: 0;                  /* start invisible */
 }
 
 header {

@@ -9,6 +9,18 @@
 	</head>
 	<body>
 
+		<script>
+			// Check URL for ?fade=1
+			const urlParams = new URLSearchParams(window.location.search);
+			if (urlParams.get('fade') === '1') {
+			document.body.classList.add('fade-in');
+			window.addEventListener('load', () => {
+				// Trigger fade-in after load
+				document.body.style.opacity = '1';
+			});
+			}
+		</script>
+
 
 	
 		<header>

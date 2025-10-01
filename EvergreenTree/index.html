@@ -9,10 +9,8 @@
 	</head>
 	<body>
 
-
-		<audio id="hover-sound" src="hover.mp3" preload="auto"></audio>
-
 		<div>
+			<img src="img/logo.png" id="evth">
 			<div class="wii-menu">
 				<a href="https://evthbound.com?fade=1">
 					<div class="channel">
@@ -45,7 +43,6 @@
 						<img src="channels/cestlavie.jpg">
 					</div>
 				</a>
-				</audio>
 				<div class="emptychannel">
 					EVTH
 				</div>
@@ -65,114 +62,129 @@
 				</a>
 				
 				
-			<div class="footer">
-				<a href="#" class="wii-button">EvergreenTh</a>
-			</div>
+			
+		</div>
+		<div class="footer">
+			<button class="wii-button">EvergreenTh</button>
 		</div>
 
 		<div id="overlay"></div>
 
-<script>
-document.querySelectorAll('.channel').forEach(channel => {
-  channel.addEventListener('click', e => {
-    e.preventDefault();
-    const link = channel.parentElement.href;
+		<script>
+		document.querySelectorAll('.channel').forEach(channel => {
+		channel.addEventListener('click', e => {
+			e.preventDefault();
+			const link = channel.parentElement.href;
 
-    const img = channel.querySelector('img');
-    if (!img) return;
+			const img = channel.querySelector('img');
+			if (!img) return;
 
-    const rect = img.getBoundingClientRect();
+			const rect = img.getBoundingClientRect();
 
-    // Create black background
-    const blackBg = document.createElement('div');
-    blackBg.style.position = 'fixed';
-    blackBg.style.left = rect.left + 'px';
-    blackBg.style.top = rect.top + 'px';
-    blackBg.style.width = rect.width + 'px';
-    blackBg.style.height = rect.height + 'px';
-    blackBg.style.backgroundColor = 'black';
-    blackBg.style.zIndex = 9998;
-    blackBg.style.transition = 'all 0.5s ease';
-    document.body.appendChild(blackBg);
+			// Create black background
+			const blackBg = document.createElement('div');
+			blackBg.style.position = 'fixed';
+			blackBg.style.left = rect.left + 'px';
+			blackBg.style.top = rect.top + 'px';
+			blackBg.style.width = rect.width + 'px';
+			blackBg.style.height = rect.height + 'px';
+			blackBg.style.backgroundColor = 'black';
+			blackBg.style.zIndex = 9998;
+			blackBg.style.transition = 'all 0.5s ease';
+			document.body.appendChild(blackBg);
 
-    // Clone the image
-    const clone = img.cloneNode(true);
-    clone.style.position = 'fixed';
-    clone.style.left = rect.left + 'px';
-    clone.style.top = rect.top + 'px';
-    clone.style.width = rect.width + 'px';
-    clone.style.height = rect.height + 'px';
-    clone.style.margin = 0;
-    clone.style.zIndex = 9999;
-    clone.style.transition = 'all 0.5s ease, opacity 0.5s ease';
-    document.body.appendChild(clone);
+			// Clone the image
+			const clone = img.cloneNode(true);
+			clone.style.position = 'fixed';
+			clone.style.left = rect.left + 'px';
+			clone.style.top = rect.top + 'px';
+			clone.style.width = rect.width + 'px';
+			clone.style.height = rect.height + 'px';
+			clone.style.margin = 0;
+			clone.style.zIndex = 9999;
+			clone.style.transition = 'all 0.5s ease, opacity 0.5s ease';
+			document.body.appendChild(clone);
 
-    // Scale immediately
-    requestAnimationFrame(() => {
-      clone.style.left = '0';
-      clone.style.top = '0';
-      clone.style.width = '100%';
-      clone.style.height = '100%';
-      blackBg.style.left = '0';
-      blackBg.style.top = '0';
-      blackBg.style.width = '100%';
-      blackBg.style.height = '100%';
-    });
+			// Scale immediately
+			requestAnimationFrame(() => {
+			clone.style.left = '0';
+			clone.style.top = '0';
+			clone.style.width = '100%';
+			clone.style.height = '100%';
+			blackBg.style.left = '0';
+			blackBg.style.top = '0';
+			blackBg.style.width = '100%';
+			blackBg.style.height = '100%';
+			});
 
-    // Delay fade
-    setTimeout(() => {
-      clone.style.opacity = 0;
-    }, 200); // 200ms delay before fading
+			// Delay fade
+			setTimeout(() => {
+			clone.style.opacity = 0;
+			}, 200); // 200ms delay before fading
 
-	
+			
 
-    // Redirect slightly after fade completes
-    setTimeout(() => {
-      window.location.href = link;
-    }, 700); // 500ms fade + 200ms delay
-  });
-});
-
-
-</script>
+			// Redirect slightly after fade completes
+			setTimeout(() => {
+			window.location.href = link;
+			}, 700); // 500ms fade + 200ms delay
+		});
+		});
 
 
-
-
-<audio id="clickSound" src="click.mp3" preload="auto"></audio>
-
-
-<script>
-const audio = document.getElementById('clickSound');
-audio.volume = 0.3; // 50% volume
-
-document.querySelectorAll('.channel').forEach(channel => {
-  channel.addEventListener('click', () => {
-    audio.currentTime = 0; // restart sound if clicked rapidly
-    audio.play();
-  });
-});
-</script>
+		</script>
 
 
 
 
+		<audio id="clickSound" src="click.mp3" preload="auto"></audio>
+		<audio id="buttonSound" src="beans-yawn.mp3" preload="auto"></audio>
 
-<audio id="mySoundClip" src="hover.mp3" preload="auto"></audio>
+		<script>
+			const clickSound = document.getElementById('clickSound');
+			clickSound.volume = 0.3;
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-var audio = $("#mySoundClip")[0];
-$(".channel").mouseenter(function() {
-  audio.currentTime = 0;
-  audio.play();
-});
-</script>
+			document.querySelectorAll('.channel').forEach(channel => {
+			channel.addEventListener('click', () => {
+				clickSound.currentTime = 0;
+				clickSound.play().catch(err => console.log("Click sound blocked:", err));
+			});
+			});
+
+			const buttonSound = document.getElementById('buttonSound');
+			buttonSound.volume = 0.3;
+
+			document.querySelectorAll('.wii-button').forEach(button => {
+			button.addEventListener('click', () => {
+				buttonSound.play().catch(err => console.log("Button sound blocked:", err));
+			});
+			});
+
+			const buttonSound2 = document.getElementById('clickSound');
+			buttonSound2.volume = 0.5;
+
+			document.querySelectorAll('.wii-button').forEach(button => {
+			button.addEventListener('click', () => {
+				clickSound.currentTime = 0;
+				buttonSound2.play().catch(err => console.log("Button sound blocked:", err));
+			});
+			});
+		</script>
 
 
 
+
+
+		
+
+		<img src="img/miiTom.gif" id="tom" style="display:none;">
+		<script> // Show img if btn clicked
+		document.querySelector('.wii-button').addEventListener('click', () => {
+			const img = document.getElementById('tom');
+			img.style.display = 'block';
+		});
+		</script>
 
 
 	</body>
 </html>
-

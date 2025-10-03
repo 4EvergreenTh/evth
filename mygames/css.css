@@ -355,11 +355,6 @@ footer p {
 	top: 1vh;
 }
 
-.gameDesc h1 {
-	color: #c8771c;
-	position: relative;
-	top: 1vh;
-}
 
 .gameDesc p {
 	color: #d3c2ab;
@@ -498,23 +493,103 @@ button:hover {
 /* ------------------------------------------------------------ */
 
 
-
-/* Desktop */
-@media (max-width: 1440px) {
-
-}
-
 /* Tablet */
 @media (max-width: 1024px) {
+
+	#bloc p {
+		width: 60vw;
+	}
+
+	.gameCapsule {
+		margin-bottom: 10vh;
+	}
+
+	.gameCapsuleR {
+		margin-bottom: 10vh;
+	}
 
 }
 
 /* Phone */
 @media (max-width: 600px) {
 
+	section {
+		padding: 10vh 0 0 0;
+	}
+	
+	
+	#intro {
+			width: auto;
+		}
+
+	#bloc {
+		margin: 0;
+	}
+
+	.gameCapsule {
+		flex-direction: column;
+		margin-bottom: 40vh;
+	}
+
+	.gameCapsule:hover {
+		transform: translate(0);
+	}
+
+	.gameCapsule img {
+		margin: 0;
+	}
+
+	.gameDesc {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 80vw;
+	}
+
+	.gameDesc p {
+		padding: 0;
+		width: auto;
+		text-align: center;
+	}
+
+	.gameDesc h1 {
+		margin-top: 1.5vh;
+		margin-bottom: 1vh;
+	}
+	
+	.gameCapsuleR {
+		flex-direction: column-reverse;
+		margin-bottom: 40vh;
+	}
+
+	.gameCapsuleR:hover {
+		transform: translate(0);
+	}
+
+	.gameCapsuleR img {
+		margin: 0;
+	}
+
+	.gameDescR {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 80vw;
+	}
+
+	.gameDescR p {
+		padding: 0;
+		width: auto;
+		text-align: center;
+	}
+
+	.gameDescR h1 {
+		margin-top: 1.5vh;
+		margin-bottom: 1vh;
+	}
 
 }
-*/
+
 
 /* ------------------------------------------------------------ */
 

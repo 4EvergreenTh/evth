@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, p, div, img, a, hr {
 
 @font-face {
 	font-family: 'Earthbound';
-	src: url('font/earthbound/earthbound.woff2') format('woff2');
+	src: url('../../font/earthbound/earthbound.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 
@@ -442,4 +442,5 @@ exempleToCenter {
 	display: flex;			Flex
 	align-items: center;		Vertical
   	justify-content: center;	Horizontal
+
 }

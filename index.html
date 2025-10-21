@@ -27,191 +27,202 @@
 
 
 	
-		<header>
-			<div class="row">
-			
-			<!-- SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR -->
-			<div class="log" onclick="openSidebar()">
-				<img src="img/UI/logo.png" class="log">
-			</div>
-			
-			<nav id="sidebar" class="sidebar">
-				<img src="img/UI/logo.png" class="log2">
-				<img src="img/UI/SIDEBAR_cross.png" class="close-btn" onclick="closeSidebar()">
-				
-				<hr width="100%" size="2" color="#543717" noshade>
-				
-				<a href=" " id="mainPage"> Main page</a>
-				<a href=" " id="aboutMe"> About me</a>
-				<a href=" " id="myProjects"> My projects</a>
-				<a href=" " id="myPhotography"> My Photography</a>
-				<a href=" " id="myVideos"> My Videos</a>
-
-				<hr width="100%" size="2" color="#351d1b" noshade>
-
-				<a href="EvergreenTree/" id="EvergreenTree">EvergreenTree</a>
-				
-				<div class="langSwitch">
-					<div style="cursor: pointer;" onclick="setLang('en'); closeSidebar()">EN</div>
-					<div style="cursor: pointer;" onclick="setLang('fr'); closeSidebar()">FR</div>
-					<script src="lang.js"></script>
-				</div>
-			</nav>
-
-			<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
-			<!-- SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR -->
 		
-			</div>
-			
-			
-			
-	
-			<div class="socialLogos">
-				<a href="https://www.instagram.com/tom_maussion" target="blank">
-					<img src="img/UI/logo_insta.png"  class="insta" width="30" height="40" title="My Instagram">
-				</a>
-				<a href="https://open.spotify.com/user/maussiontom" target="blank">
-					<img src="img/UI/logo_spotify.png" class="insta" width="30" height="40" title="My Spotify">
-				</a>
-				<a href="https://evergreenth.itch.io/" target="blank">
-					<img src="img/UI/logo_itch.png" class="insta" width="30" height="40" title="My Itch.io Page">
-				</a>
-			</div>
-		</header>
 
 
 
 		<!-- WELCOME TO EVTHBOUND WELCOME TO EVTHBOUND WELCOME TO EVTHBOUND -->
 		<section>
+			
 			<div class="banner">
-				<img src="img/PAGE_index/1.png">
+
+
+				<header>
+					<div class="row">
+					
+						<!-- SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR -->
+						<div class="log" onclick="openSidebar()">
+							<img src="img/UI/logo.png" class="log">
+						</div>
+					
+						<nav id="sidebar" class="sidebar">
+							<img src="img/UI/logo.png" class="log2" onclick="closeSidebar()">
+							<div class="langSwitch">
+								<div onclick="setLang('en'); closeSidebar()">EN</div>
+								<div onclick="setLang('fr'); closeSidebar()">FR</div>
+								<script src="lang.js"></script>
+							</div>
+
+							<hr width="100%" size="2" color="#2c1313" style="margin: 0 0 5vh 0;" noshade>
+							
+							<div class="aButton">
+								<a href=" " id="mainPage">Main page</a>
+							</div>
+							<div class="aButton">
+								<a href=" " id="mainPage">About me</a>
+							</div>
+							<div class="aButton">
+								<a href=" " id="mainPage">Projects</a>
+							</div>
+							<div class="aButton">
+								<a href=" " id="mainPage">Photography</a>
+							</div>
+							<div class="aButton">
+								<a href=" " id="mainPage">Videos</a>
+							</div>
+
+							<hr width="100%" size="2" color="#050505" style="margin: 0; opacity: 0;" noshade>
+
+							<div class="aButton">
+								<a href="EvergreenTree/" id="EvergreenTree">EvergreenTree</a>
+							</div>
+						</nav>
+
+						<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+						<!-- SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR -->
+					
+					</div>
+					
+					
+					
+			
+					<div class="socialLogos">
+						<a href="https://www.instagram.com/tom_maussion" target="blank">
+							<img src="img/UI/logo_insta.png"  class="insta" width="30" height="40" title="My Instagram">
+						</a>
+						<a href="https://open.spotify.com/user/maussiontom" target="blank">
+							<img src="img/UI/logo_spotify.png" class="insta" width="30" height="40" title="My Spotify">
+						</a>
+						<a href="https://evergreenth.itch.io/" target="blank">
+							<img src="img/UI/logo_itch.png" class="insta" width="30" height="40" title="My Itch.io Page">
+						</a>
+					</div>
+				</header>
+
 				<div class="banner-elements">
-					<h1>Hey,</h1>
-					<h1 id="welcome"></h1>
-					<p style="color: #cfc6bf; margin: 0; padding-right: 20vw;" id="switchLang"></p>
+					<h3>HEY I'M</h3>
+					<h1>EVERGREENTH</h1>
+					<p id="switchLang"></p>
+					<h3 style="position: absolute; bottom: 1vw; left: 1vw;">-----</h3>
+					<h3 style="position: absolute; bottom: 1vw; right: 1vw;">-----</h3>
 					
 				</div>
 			</div>
 		</section>
 		<!-- WELCOME TO EVTHBOUND WELCOME TO EVTHBOUND WELCOME TO EVTHBOUND -->
 		
-
-		<hr width="100%" size="2" color="#543717" noshade>
-		
+		<hr id="bannerHR" width="100%" size="4" noshade>
 	
 		<!-- ABOUT ME  ABOUT ME  ABOUT ME -->
-		<div class="border_centered">
-			<div class="leftside">
-				<img src="img/PAGE_index/tom_portrait.png" width="300" height="450" class="portrait">
+		<section id="about">
+			<div id="aboutDiv">
+				<img src="img/PAGE_index/tom_portrait_red.png" width="300" height="450" class="portrait">
+				<div>
+					<h1 id="soWhat">SO WHAT ABOUT ME ?</h1>
+					<p id="descParagraph"> 
+						Heyo I'm <b>Tom.</b> I'm also known as <b>Evergreenth</b> online. I'm into <b>photography</b>, making <b>Game Boy games</b>, <b>music</b>, and just creating cool stuff for fun. I'm currently studying at a <b>cinema school</b>, which fits perfectly since I also enjoy <b>making videos</b>, and pretty much anything <b>creative</b>. When I'm not behind my camera, obsessing with niche image stuff, I like to try new things and jump between different <b><s>obsessions</s></b>, I mean- <b><u>hobbies</u></b> ... This website is just a little space for me to share what I'm up to. Hey it's cool to have a website don't you think ?
+					</p>
+					<a href="aboutme/">
+						<button id="moreAboutMe">
+							<p>MORE ABOUT ME</p>
+						</button>
+					</a>
+				</div>
 			</div>
-			<div class="rightside">
-				<h1 id="soWhat">SO WHAT ABOUT ME ?</h1>
-				<p id="descParagraph"> 
-					Heyo I'm <b>Tom.</b> I'm also known as <b>Evergreenth</b> online. I'm into <b>photography</b>, making <b>Game Boy games</b>, <b>music</b>, and just creating cool stuff for fun. I'm currently studying at a <b>cinema school</b>, which fits perfectly since I also enjoy <b>making videos</b>, and pretty much anything <b>creative</b>. When I'm not behind my camera, obsessing with niche image stuff, I like to try new things and jump between different <b><s>obsessions</s></b>, I mean- <b><u>hobbies</u></b> ... This website is just a little space for me to share what I'm up to. Hey it's cool to have a website don't you think ?
+		</section>
+		<!-- ABOUT ME  ABOUT ME  ABOUT ME -->
+		
+		<hr id="aboutMeHR" width="100%" size="4" style="margin: 0;" noshade>
+
+		<!-- MY GAMES  MY GAMES  MY GAMES -->
+		<section id='games'>
+			<div id='gamesDiv'>
+				<h1 id='titleMyGames'>MY GAMES</h2>
+				<p id="myGamesP">
+					Here you can see the games I made using <a href="https://www.gbstudio.dev/" target="_blank">GB Studio</a>! I've made <b>two games</b> so far (I'm not a pro so don't judge them too hard please). You can find and play my GB games online, in the browser, on my <a href="https://evergreenth.itch.io/" target="_blank">Itch.io page</a>
 				</p>
-				<a href="aboutme/">
-					<button>
-						<p id="moreAboutMe">MORE ABOUT ME &#8680;</p>
+
+				<div class="games">
+
+					<!-- Pinecode Protocol -->
+					<a href="mygames/pinecode-protocol/">
+						<div class="game">
+							<h3>The Pinecode Protocol</h3>
+							<div class="gameDesc">
+								<img src="img/PAGE_games/pinecodeProtocol.png">
+								<p id="pinecodeDesc">A <b>short RPG inspired by Earthbound</b>, where you play as <b>James</b>, a teenager who loves old stuff. One day as he goes into the <b>forest</b> he discovers an old <b>bunker filled with mysteries</b>... <b>[UNFINISHED]<b></p>
+							</div>
+						</div>
+					</a>
+
+					<!-- Harvest Heart -->
+					<a href="mygames/harvest-heart/">
+						<div class="game">
+							<h3>Harvest Heart</h3>
+							<div class="gameDesc">
+								<img src="img/PAGE_games/harvestHeart.png">
+								<p id='harvestHeartDesc'>An unfinished <b>farming/RPG</b> made for my girlfriend. You play as <b>Lila</b>, you live in a small town and you have to <b>gather items to sell them and make money</b>. <b>[UNFINISHED]</b></p>
+							</div>
+						</div>
+					</a>
+					
+				</div>
+
+				<a href="mygames/">
+					<button id="seeGames">
+						SEE GAMES
 					</button>
 				</a>
 			</div>
-		</div>
-		<!-- ABOUT ME  ABOUT ME  ABOUT ME -->
-
-
-		<hr width="100%" size="2" color="#543717" noshade>
-		
-		
-		<!-- MY GAMES  MY GAMES  MY GAMES -->
-		<section id='games'>
-			<h1 id='titleMyGames'>MY GAMES</h2>
-			<p id="myGamesP">
-				Here you can see the games I made using <a href="https://www.gbstudio.dev/" target="_blank">GB Studio</a>! I've made <b>two games</b> so far (I'm not a pro so don't judge them too hard please). You can find and play my GB games online, in the browser, on my <a href="https://evergreenth.itch.io/" target="_blank">Itch.io page</a>
-			</p>
-
-			<div class="games">
-
-				<!-- Pinecode Protocol -->
-				<a href="mygames/pinecode-protocol/">
-					<div class="game">
-						<h3>The Pinecode Protocol</h3>
-						<div class="gameDesc">
-							<img src="img/PAGE_games/pinecodeProtocol.png">
-							<p id="pinecodeDesc">A <b>short RPG inspired by Earthbound</b>, where you play as <b>James</b>, a teenager who loves old stuff. One day as he goes into the <b>forest</b> he discovers an old <b>bunker filled with mysteries</b>... <b>[UNFINISHED]<b></p>
-						</div>
-					</div>
-				</a>
-
-				<!-- Harvest Heart -->
-				<a href="mygames/harvest-heart/">
-					<div class="game">
-						<h3>Harvest Heart</h3>
-						<div class="gameDesc">
-							<img src="img/PAGE_games/harvestHeart.png">
-							<p id='harvestHeartDesc'>An unfinished <b>farming/RPG</b> made for my girlfriend. You play as <b>Lila</b>, you live in a small town and you have to <b>gather items to sell them and make money</b>. <b>[UNFINISHED]</b></p>
-						</div>
-					</div>
-				</a>
-				
-			</div>
-
-			<a href="mygames/">
-				<button id="seeGames">
-					SEE GAMES
-				</button>
-			</a>
-			
 		</section>
 		<!-- MY GAMES  MY GAMES  MY GAMES -->
 		
 
-		<hr width="100%" size="2" color="#543717" noshade>
+		<hr id="gamesHR" width="100%" size="4" noshade>
 		
 		
 		<!-- MY PHOTOGRAPHY MY PHOTOGRAPHY MY PHOTOGRAPHY  -->
-		<section id="photography">
+		<!-- <section id="photography">
 
-			<h1 class= "title" id="TitleMyPhoto"> MY PHOTOGRAPHY </h1>
-			<!-- <p> hhhhhhhhhuidh uhau hauhdaui haudjhaiudh auhbjasbdjasbduoabdu abub ba adb bau babudbabd babuiabd uiabd uibau baui bduabdiauzbd iuab uiab uad buizbdbiuazbdba ibiu </p> -->
-			
-			
-			<div class="photo_gallery">
-			
-				<div class="polaroid">
-					<img src="img/PAGE_index/PHOTO/1.jpg" class="pic">
-					<h5 id="pic1">A friend</h5>
-				</div>
-				<div class="polaroid">
-					<img src="img/PAGE_index/PHOTO/2.jpg" class="pic">
-					<h5 id="pic2">A car</h5>
-				</div>
-				<div class="polaroid">
-					<img src="img/PAGE_index/PHOTO/3.jpg" class="pic">
-					<h5 id="pic3">Another friend</h5>
-				</div>
-				<div class="polaroid">
-					<img src="img/PAGE_index/PHOTO/4.jpg" class="pic">
-					<h5 id="pic4">The same car</h5>
-				</div>
-				<div class="polaroid">
-					<img src="img/PAGE_index/PHOTO/5.jpg" class="pic">
-					<h5 id="pic5">Yet another friend</h5>
-				</div>
-		
-				<a href="myphotography/" id="img_see_more" title="See more of my photography">
+			<div id="photographyDiv">
+				<h1 class= "title" id="TitleMyPhoto"> MY PHOTOGRAPHY </h1>
+				
+				<div class="photo_gallery">
+				
+					<div class="film-frame">
+						<img src="img/PAGE_index/PHOTO/1.jpg" class="pic">
+					</div>
 					<div class="polaroid">
-						<img src="img/PAGE_index/PHOTO/6.jpg" width="250" height="250" class="pic">
-						<h5 id="pic6">Click to see more</h5>
+						<img src="img/PAGE_index/PHOTO/2.jpg" class="pic">
+						<h5 id="pic2">A car</h5>
 					</div>
-				</a>
-				
-			</div>
+					<div class="polaroid">
+						<img src="img/PAGE_index/PHOTO/3.jpg" class="pic">
+						<h5 id="pic3">Another friend</h5>
+					</div>
+					<div class="polaroid">
+						<img src="img/PAGE_index/PHOTO/4.jpg" class="pic">
+						<h5 id="pic4">The same car</h5>
+					</div>
+					<div class="polaroid">
+						<img src="img/PAGE_index/PHOTO/5.jpg" class="pic">
+						<h5 id="pic5">Yet another friend</h5>
+					</div>
 			
-		</section>
+					<a href="myphotography/" id="img_see_more" title="See more of my photography">
+						<div class="polaroid">
+							<img src="img/PAGE_index/PHOTO/6.jpg" width="250" height="250" class="pic">
+							<h5 id="pic6">Click to see more</h5>
+						</div>
+					</a>
+					
+				</div>
+			</div>
+		</section> -->
 		<!-- MY PHOTOGRAPHY MY PHOTOGRAPHY MY PHOTOGRAPHY  -->
 		
 		
-		<!-- <hr width="100%" size="2" color="#543717" noshade> -->
+		<!-- <hr id="photographyHR" width="100%" size="4" noshade> -->
 		
 		
 	
@@ -222,16 +233,17 @@
 			<div class=footer_links>
 
 				<div class=column>
-					<h2 id="links"> Links </h2>
-					<a href=" " id="mainPage2" class="links"> </a>
+					<h2 id="links"> LINKS </h2>
+					<a href="index.html" id="mainPage2" class="links"> Main page</a>
 					<a href=" " id="aboutMe2" class="links"> About me</a>
-					<a href=" " id="myProjects2" class="links"> My projects</a>
+					<a href="mygames/" 			 class="links"> My games</a>
+					<!-- <a href=" " id="myProjects2" class="links"> My projects</a>
 					<a href=" " id="myPhotography2" class="links"> My Photography</a>
-					<a href=" " id="myVideos2" class="links"> My Videos</a>
+					<a href=" " id="myVideos2" class="links"> My Videos</a> -->
 				</div>
 
 				<div class=column>
-					<h2 id="socials"> Social(s) </h2>
+					<h2 id="socials"> SOCIALS </h2>
 					<a href="https://www.instagram.com/tom_maussion" target="_blank" class="links" id="insta">My Instagram</a>
 					<a href="https://open.spotify.com/user/maussiontom" target="_blank" class="links" id="spotify">My Spotify</a>
 					<a href="https://evergreenth.itch.io/" target="_blank" class="links" id="itch">My Itch.io Page</a>

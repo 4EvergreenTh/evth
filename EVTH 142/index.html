@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Archive EVTH 142 — Restricted</title>
+    <link rel="stylesheet" href="css.css">
+  </head>
+  <body>
+  <div id="entry">
+    <div class="card">
+      <div class="title">Restricted: EVTH Section 142 Archive Interface</div>
+      <!-- <div class="sub">Cold storage access console. Credentials revoked. Manual override available.</div> -->
+      <input id="seed" class="input" placeholder="Enter access token" autofocus />
+      <div class="hint">This interface is read-only. Interaction will be logged.</div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button id="open" class="btn">Access</button>
+      </div>
+      <div id="entrymsg" class="hint"></div>
+    </div>
+  </div>
+
+  <div id="app">
+    <div class="shell">
+      <aside class="sidebar">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="font-weight:700">EVTH142 • ARCHIVE</div>
+          <div class="badge">read-only</div>
+        </div>
+        <div class="cat">Media Types</div>
+        <div id="list">
+          <!-- items injected -->
+        </div>
+      </aside>
+
+      <main class="viewer" id="viewer">
+        <div class="header">
+          <div style="font-weight:700" id="vtitle">Welcome</div>
+          <div class="controls">
+            <button class="btn" id="downloadBtn">Download</button>
+            <button class="btn" id="hexBtn">View Hex</button>
+          </div>
+        </div>
+        <div id="content">
+          <div class="small">This archive contains recovered media. Explore items on the left. Some entries are redacted.</div>
+        </div>
+      </main>
+
+      <aside class="sidebar">
+        <div style="font-weight:700; margin-bottom: 10px;">Item Details</div>
+        <div class="audit" id="details">
+          <div class="small">Select an item to view metadata and integrity notes.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- locked modal template -->
+  <div id="overlay" style="display:none" class="locked-overlay">
+    <div class="lockbox">
+      <div style="font-weight:700">Permission Denied</div>
+      <div class="small" style="margin-top:8px">This dataset is marked restricted. To unlock, provide the correct passphrase found in another artifact.</div>
+      <div style="margin-top:12px"><input id="unlockInput" class="input" placeholder="enter passphrase" /></div>
+      <div style="margin-top:10px;display:flex;gap:8px"><button id="unlockBtn" class="btn">Unlock</button><button id="closeOverlay" class="btn">Cancel</button></div>
+      <div id="unlockMsg" class="small" style="margin-top:8px"></div>
+    </div>
+  </div>
+
+  <script src="js.js"></script>
+
+  </body>
+</html>

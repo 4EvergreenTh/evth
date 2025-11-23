@@ -42,11 +42,19 @@
 					
 						<!-- SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR -->
 						<div class="log" onclick="openSidebar()">
-							<img src="img/UI/logo.png" class="log">
+							<!-- <img src="img/UI/logo.svg" class="log"> -->
+							<svg class="log" viewBox="0 0 118.94818 92.202446" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="m 286.7601,89.831825 h 21.21221 v 12.218235 h -8.76771 v 29.07489 h 8.76771 v 11.99197 h -8.76771 v 26.81224 h 24.11355 l -3e-5,12.10484 -36.55802,2.7e-4 z m 19.06805,0 h 12.72733 l 4.4687,53.228525 3.67679,-53.228525 h 12.67077 L 328.20309,182.034 h -10.40813 z m 28.94467,0 h 29.92337 v 12.048545 h -8.71115 v 80.1539 h -12.4445 v -80.1539 h -8.76772 z m 29.46871,0 h 12.44451 v 41.293125 h 6.33538 V 89.831825 h 12.4445 v 92.202445 h -12.4445 v -38.91735 h -6.33538 v 38.91735 h -12.44451 z"
+									transform="matrix(1,0,-0.11108543,1,-266.53874,-89.831825)"
+								/>
+							</svg>
+
+
 						</div>
 					
 						<nav id="sidebar" class="sidebar">
-							<img src="img/UI/logo.png" class="log2" onclick="closeSidebar()">
+							<img src="img/UI/logo.svg" class="log2" onclick="closeSidebar()">
 							<div class="langSwitch">
 								<div onclick="setLang('en'); closeSidebar()">EN</div>
 								<div onclick="setLang('fr'); closeSidebar()">FR</div>
@@ -88,13 +96,13 @@
 			
 					<div class="socialLogos">
 						<a href="https://www.instagram.com/tom_maussion" target="blank">
-							<img src="img/UI/logo_insta.png"  class="insta" width="30" height="40" title="My Instagram">
+							<img src="img/UI/logo_insta.svg"  class="insta" width="30" height="40" title="My Instagram">
 						</a>
 						<a href="https://open.spotify.com/user/maussiontom" target="blank">
-							<img src="img/UI/logo_spotify.png" class="insta" width="30" height="40" title="My Spotify">
+							<img src="img/UI/logo_spotify.svg" class="insta" width="30" height="40" title="My Spotify">
 						</a>
 						<a href="https://evergreenth.itch.io/" target="blank">
-							<img src="img/UI/logo_itch.png" class="insta" width="30" height="40" title="My Itch.io Page">
+							<img src="img/UI/logo_itch.svg" class="insta" width="30" height="40" title="My Itch.io Page">
 						</a>
 					</div>
 				</header>
@@ -111,12 +119,12 @@
 		</section>
 		<!-- WELCOME TO EVTHBOUND WELCOME TO EVTHBOUND WELCOME TO EVTHBOUND -->
 		
-		<hr id="bannerHR" width="100%" size="4" noshade>
+		<!-- <hr id="bannerHR" width="100%" size="1" noshade> -->
 	
 		<!-- ABOUT ME  ABOUT ME  ABOUT ME -->
 		<section id="about">
 			<div id="aboutDiv">
-				<img src="img/PAGE_index/tom_portrait_red.png" width="300" height="450" class="portrait">
+				<img src="img/PAGE_index/tom_portrait.png" width="300" height="450" class="portrait">
 				<div>
 					<h1 id="soWhat">SO WHAT ABOUT ME ?</h1>
 					<p id="descParagraph"> 
@@ -132,7 +140,7 @@
 		</section>
 		<!-- ABOUT ME  ABOUT ME  ABOUT ME -->
 		
-		<hr id="aboutMeHR" width="100%" size="4" style="margin: 0;" noshade>
+		<hr id="aboutMeHR" width="100%" size="1" style="margin: 0;" noshade>
 
 		<!-- MY GAMES  MY GAMES  MY GAMES -->
 		<section id='games'>
@@ -178,7 +186,125 @@
 		<!-- MY GAMES  MY GAMES  MY GAMES -->
 		
 
-		<hr id="gamesHR" width="100%" size="4" noshade>
+		<hr id="gamesHR" width="100%" size="1" noshade>
+
+		<!-- <div class="txtbox">
+			• Hey I'm Tom.
+		</div> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- <style>
+    #player {
+      width: 320px;
+      font-family: sans-serif;
+    }
+
+    #top {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
+    #playBtn {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+
+    #progressBar {
+      width: 100%;
+      margin-top: 8px;
+      appearance: none;
+      height: 6px;
+      background: #ccc;
+      border-radius: 3px;
+      outline: none;
+    }
+
+    #progressBar::-webkit-slider-thumb {
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #000;
+      cursor: pointer;
+    }
+  </style>
+
+
+<div id="player">
+  <div id="top">
+    <img id="playBtn" src="play.png" alt="play">
+    <div id="time">0:00 - 0:00</div>
+  </div>
+
+  <input type="range" id="progressBar" value="0" min="0" max="100">
+</div>
+
+<audio id="audio" src="music/Earthbound - Hospital.mp3"></audio>
+
+<script>
+  const audio = document.getElementById("audio");
+  const playBtn = document.getElementById("playBtn");
+  const timeText = document.getElementById("time");
+  const progressBar = document.getElementById("progressBar");
+
+  function format(t) {
+    if (!isFinite(t)) return "0:00";
+    const m = Math.floor(t / 60);
+    const s = Math.floor(t % 60).toString().padStart(2, "0");
+    return `${m}:${s}`;
+  }
+
+  playBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.src = "img/UI/pause.png";
+    } else {
+      audio.pause();
+      playBtn.src = "img/UI/play.png";
+    }
+  });
+
+  audio.addEventListener("loadedmetadata", () => {
+    timeText.textContent = `0:00 - ${format(audio.duration)}`;
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    progressBar.value = (audio.currentTime / audio.duration) * 100;
+    timeText.textContent =
+      `${format(audio.currentTime)} - ${format(audio.duration)}`;
+  });
+
+  progressBar.addEventListener("input", () => {
+    audio.currentTime = (progressBar.value / 100) * audio.duration;
+  });
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 		
 		<!-- MY PHOTOGRAPHY MY PHOTOGRAPHY MY PHOTOGRAPHY  -->
@@ -222,9 +348,15 @@
 		<!-- MY PHOTOGRAPHY MY PHOTOGRAPHY MY PHOTOGRAPHY  -->
 		
 		
-		<!-- <hr id="photographyHR" width="100%" size="4" noshade> -->
+		<!-- <hr id="photographyHR" width="100%" size="1" noshade> -->
 		
-		
+		<!-- <section>
+			<video controls>
+				<source src="video/video.MP4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+
+		</section> -->
 	
 
 

@@ -3,18 +3,19 @@ html, body {
  	padding: 0;
   	width: 100%;
   	height: 100%;
-	background-color: var(--colorFooter);
 }
 
+
 :root {
-	--colorBackground: #0d0d0d;
-	--colorBackgroundAlt: #1d1d1d;
-  	--colorMain: #c81c1c;
-	--colorMainHighlight: #e71b1b;
-  	--colorSecond: #da8019;
-	--colorThird: #211ec9;
-	--colorFourth: #239c37;
-	--colorText: #f3f3f3;
+	--colorBackground: #220d0d00; 
+	--colorBackgroundAccent: #471f08; 
+  	--colorMain: #da872f; 
+	--colorMainHighlight: #da872f; 
+	--colorBackgroundSecond: #1b141400;
+  	--colorSecond: #da872f;
+	--colorThird: #da872f;
+	--colorFourth: #da872f;
+	--colorText: #e3e6c5; 
 	--colorFooter: #06020c;
 }
 
@@ -25,6 +26,13 @@ html, body {
   font-style: normal;
 }
 
+/* @font-face {
+  font-family: 'appleGarmond';
+  src: url('font/apple_garamond/AppleGaramond-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} */
+
 @font-face {
   font-family: 'Roboto';
   src: url('font/Roboto/Roboto-VariableFont.woff2') format('woff2');
@@ -32,7 +40,7 @@ html, body {
   font-style: normal;
 }
 
-/*
+
 @font-face {
   font-family: 'Earthbound';
   src: url('font/earthbound/earthbound.woff2') format('woff2');
@@ -40,17 +48,19 @@ html, body {
   font-style: normal;
 }
 
+
 @font-face {
   font-family: 'GameBoy';
-  src: url('font/GameBoy.woff2') format('woff2');
+  src: url('font/Gameboy/GameBoy.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
-*/ 
+
 
 body {
 	margin: 0px;
-	background-color: #d8e2e3; /*#351d1b*/
+	background-color: #80d0ff; /* #351d1b */
+	background-image: url(img/UI/BACKGROUND.gif);
 	overflow-x: hidden;
 	/* font-family: BBH, sans-serif; */
 
@@ -151,8 +161,9 @@ header {
 
 	/* background-color: rgba(13, 13, 13, 0); #0d0d0d */
 	/* box-shadow: 0px 10px 10px rgba(13, 13, 13, 0); */
-	padding: 1rem;
+	padding: 2vh;
 	width: 100%;
+	height: 7vh;
 	
 	display: flex;
 	align-items: center;
@@ -163,6 +174,7 @@ header {
 .socialLogos img{
 	vertical-align: middle;
 	margin-right: 1vw;
+	
 }
 
 .socialLogos {
@@ -179,14 +191,14 @@ header {
 /* SIDEBAR */
 
 .log {
-	width: 52px;
-	height: 40px;
+	height: 7vh;
 	display: flex;
-	align-items: center;
+	/* align-items: center; */
 	cursor: pointer;
+	fill: var(--colorMain);
 }
 
-.log img{
+.log svg {
 	cursor: pointer;
 	margin-left: 1vw;
 }
@@ -325,13 +337,13 @@ header {
  	height: 100vh;
  	overflow: hidden;
 	
-	background-image: url('img/PAGE_index/1.png');
+	/* background-image: url('img/PAGE_index/1.png'); */
  	background-size: cover;
  	background-position: center;
  	background-repeat: no-repeat;
 }
 
-.banner h1, .banner h3 {
+.banner h1 {
 	color: var(--colorMainHighlight);
 	text-shadow:
 		0 0 1.5px var(--colorMain),
@@ -340,13 +352,13 @@ header {
 		0 0 1.5px var(--colorMain);
 }
 
-.banner p {
+.banner p, .banner h3 {
 	color: var(--colorMainHighlight);
 	text-shadow:
-		0 0 1.5px var(--colorMain),
-		0 0 1.5px var(--colorMain),
-		0 0 1.5px var(--colorMain),
-		0 0 1.5px var(--colorMain);
+		0 0 1px var(--colorMain),
+		0 0 1px var(--colorMain),
+		0 0 1px var(--colorMain),
+		0 0 1px var(--colorMain);
 }
 
 .banner h1 {
@@ -378,15 +390,19 @@ header {
 /* - ABOUT - */
 
 #aboutMeHR {
-	background-color: var(--colorSecond);
-	border-color: var(--colorSecond);
-	box-shadow: 0px 0px 30px var(--colorSecond);
+	/* background-color: var(--colorSecond); */
+	/* border-color: var(--colorSecond); */
+	/* box-shadow: 0px 0px 30px var(--colorSecond); */
+	border-color: var(--colorBackground);
 	margin: 0;
 }
 
 /* section */
 #about {
-	background-color: var(--colorBackground); 
+	/* background: linear-gradient(var(--colorBackground),var(--colorBackgroundAccent),var(--colorBackground)); */
+	/* background: linear-gradient(var(--colorBackground),var(--colorBackgroundAccent)); */
+	background-color: var(--colorBackground);
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -482,7 +498,10 @@ header {
 
 /* section */
 #games {
-	background-color: var(--colorBackground); 
+	/* background: linear-gradient(var(--colorBackground),var(--colorBackgroundAccent),var(--colorBackground)); */
+	/* background: linear-gradient(var(--colorBackgroundAccent),var(--colorBackgroundAccentII));*/
+	background-color: var(--colorBackgroundSecond);
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -561,7 +580,8 @@ header {
 /* Game Title h3 */
 .game h3 {
 	color: var(--colorText);
-	font-size: 2vw;
+	font-family: 'GameBoy';
+	/* font-size: 2vw; */
 	margin: 1vw 0 1vw 0;
 }
 
@@ -624,7 +644,8 @@ header {
 
 /* section */
 #photography {
-	background-color: var(--colorBackground); 
+	/* background: linear-gradient(var(--colorBackground),var(--colorBackgroundAccent),var(--colorBackground));  */
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -706,10 +727,41 @@ header {
 
 
 
+
+
+
+
+
+
+.txtbox {
+	background-color: #280828;
+	border-radius: 7px;
+	border: 0.3rem solid #401828;
+	box-shadow: 
+		inset 0 0 0 0.3rem #f8e8a8,
+        inset 0 0 0 1.2rem #e0a050,
+        inset 0 0 0 2rem #401828,
+        15px 15px 0 rgba(0,0,0,0.1);
+	padding: 2.8rem;
+	word-wrap: break-word;
+
+	color: var(--colorText);
+	font-size: 2rem;
+	font-family: Earthbound;
+	vertical-align: baseline;
+}
+
+
+
+
+
+
+
+
 /* - FOOTER - */
 
 footer {
-	background-color: var(colorFooter);
+	background: var(--colorBackground);
 	padding: 5vh 7vw 0 6vw;
 
 	display: flex;
@@ -772,6 +824,17 @@ footer p {
 	padding-bottom: 1vh;
 	margin: 0px;
 	font-size: 0.7em;
+}
+
+
+
+
+
+
+/* - VIDEO - */
+
+video {
+	width: 80vw;
 }
 
 

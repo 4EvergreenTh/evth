@@ -7,16 +7,23 @@ html, body {
 
 
 :root {
-	--colorBackground: #220d0d00; 
-	--colorBackgroundAccent: #471f08; 
+	--colorBackground: #30121f; 
+	--colorBackgroundAccent: #422222; 
+	--colorBackgroundOpacity: #30121fb7; 
+	--colorBackgroundAccentOpacity: #422222b7; 
+
   	--colorMain: #da872f; 
 	--colorMainHighlight: #da872f; 
-	--colorBackgroundSecond: #1b141400;
+
   	--colorSecond: #da872f;
 	--colorThird: #da872f;
 	--colorFourth: #da872f;
-	--colorText: #e3e6c5; 
+
+	--colorText: #e3e6c5;
+
 	--colorFooter: #06020c;
+
+	--angleGradient: 5deg;
 }
 
 @font-face {
@@ -108,6 +115,15 @@ a {
 section {
  	width: 100%;
 	min-height: 100vh;
+
+	background: linear-gradient(var(--angleGradient),
+		var(--colorBackgroundOpacity),
+		var(--colorBackgroundOpacity),
+		var(--colorBackgroundAccentOpacity),
+		var(--colorBackgroundOpacity),
+		var(--colorBackgroundOpacity)
+	);
+	backdrop-filter: blur(5px);
 }
 
 
@@ -132,13 +148,15 @@ button {
 
 
 button:hover {
-	color: var(--colorBackground);
+	/* color: var(--colorBackground); */
+	color: transparent;
   	background-color: var(--colorText);
   	border: 2px solid var(--colorText);
 }
 
 button:hover p {
-	color: var(--colorBackground);
+	/* color: var(--colorBackground); */
+	color: transparent;
 }
 
 
@@ -248,10 +266,6 @@ header {
 	transition: 0.2s;
 }
 
-/* .sidebar a:hover {
-	transition: 0.2s;
-	color: var(--colorMainHighlight);
-} */
 
 .close-btn {
 	color: var(--colorMain);
@@ -322,9 +336,9 @@ header {
 /* - BANNER - */
 
 #bannerHR {
-	background-color: var(--colorMain);
-	border-color: var(--colorMain);
-	box-shadow: 0px 0px 30px var(--colorMain);
+	background-color: var(--colorBackgroundAccent);
+	border-color: transparent; 
+	/* box-shadow: 0px 0px 50px 20px var(--colorBackgroundAccent); */
 	margin: 0;
 }
 
@@ -337,10 +351,11 @@ header {
  	height: 100vh;
  	overflow: hidden;
 	
-	/* background-image: url('img/PAGE_index/1.png'); */
+	/* background-image: url('img/PAGE_index/1.png'); 
  	background-size: cover;
  	background-position: center;
- 	background-repeat: no-repeat;
+ 	background-repeat: no-repeat; */
+
 }
 
 .banner h1 {
@@ -377,6 +392,20 @@ header {
 	margin-right: auto;
 }
 
+#flower1 {
+	position: absolute;
+	right: -2vw;
+	bottom: 8vh;
+	height: 25vh;
+}
+
+#flower2 {
+	position: absolute;
+	left: -2vw;
+	bottom: 8vh;
+	height: 25vh;
+}
+
 
 
 
@@ -393,16 +422,14 @@ header {
 	/* background-color: var(--colorSecond); */
 	/* border-color: var(--colorSecond); */
 	/* box-shadow: 0px 0px 30px var(--colorSecond); */
-	border-color: var(--colorBackground);
+
+	/* border-color: var(--colorBackground); */
+	border-color: transparent;
 	margin: 0;
 }
 
 /* section */
 #about {
-	/* background: linear-gradient(var(--colorBackground),var(--colorBackgroundAccent),var(--colorBackground)); */
-	/* background: linear-gradient(var(--colorBackground),var(--colorBackgroundAccent)); */
-	background-color: var(--colorBackground);
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -492,14 +519,14 @@ header {
 #gamesHR {
 	background-color: var(--colorThird);
 	border-color: var(--colorThird);
+
 	box-shadow: 0px 0px 30px var(--colorThird);
 	margin: 0;
+	size: 0;
 }
 
 /* section */
 #games {
-	/* background: linear-gradient(var(--colorBackground),var(--colorBackgroundAccent),var(--colorBackground)); */
-	/* background: linear-gradient(var(--colorBackgroundAccent),var(--colorBackgroundAccentII));*/
 	background-color: var(--colorBackgroundSecond);
 
 	display: flex;
@@ -555,6 +582,9 @@ header {
 
 /* Individual Game capsules div */
 .game {
+	backdrop-filter: blur(0px);
+	/* background-color: var(--colorBackgroundOpacity); */
+
 	border: 0.2vw solid var(--colorText);
 	border-radius: 10px;
 	margin: 3vw;
@@ -573,6 +603,7 @@ header {
 }
 
 .game:hover {
+	backdrop-filter: blur(3px);
 	border: 0.2vw solid var(--colorThird);
 	transform: scale(1.01);
 }
@@ -619,6 +650,7 @@ header {
 
 #gamesDiv button:hover {
 	color: var(--colorBackground);
+	
   	background-color: var(--colorText);
   	border: 2px solid var(--colorText);
 }
@@ -644,8 +676,6 @@ header {
 
 /* section */
 #photography {
-	/* background: linear-gradient(var(--colorBackground),var(--colorBackgroundAccent),var(--colorBackground));  */
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -964,12 +994,18 @@ video {
 	/* Individual Game capsules div */
 	.game {
 		width: 80vw;
+		border: 0.5vw solid var(--colorText);
+	}
+
+	.game:hover {
+		width: 80vw;
+		border: 0.5vw solid var(--colorText);
 	}
 
 	/* Game Title h3 */
 	.game h3 {
 		color: var(--colorText);
-		font-size: 5vw;
+		font-size: 3.5vw;
 		margin: 1vw 0 2vw 0;
 	}
 
@@ -1030,7 +1066,7 @@ video {
 
 
 exempleToCenter {
-	display: flex;			Flex
-	align-items: center;		Vertical
-  	justify-content: center;	Horizontal
+	display: flex;			/* Flex */
+	align-items: center;		/* Vertical */
+  	justify-content: center;	/* Horizontal */
 }

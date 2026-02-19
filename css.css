@@ -66,7 +66,7 @@ html, body {
 
 body {
 	margin: 0px;
-	background-color: #80d0ff; /* #351d1b */
+	background-color: #30121f; /* #351d1b */
 	background-image: url(img/UI/BACKGROUND.gif);
 	overflow-x: hidden;
 	/* font-family: BBH, sans-serif; */
@@ -1087,4 +1087,5 @@ exempleToCenter {
 	display: flex;			/* Flex */
 	align-items: center;		/* Vertical */
   	justify-content: center;	/* Horizontal */
+
 }
